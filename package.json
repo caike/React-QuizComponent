@@ -11,7 +11,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "./node_modules/.bin/cross-env react-scripts test --env=jsdom",
-    "tutor-test": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --json",
+    "tutor-test": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --json --noStackTrace",
     "eject": "react-scripts eject"
   },
   "jest": {
@@ -33,7 +33,7 @@
     ]
   },
   "devDependencies": {
-    "acorn": "5.5.3",
+    "babylon": "6.18.0",
     "chai": "4.1.2",
     "chai-enzyme": "0.8.0",
     "cross-env": "5.1.4",
