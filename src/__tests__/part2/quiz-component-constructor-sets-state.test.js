@@ -14,7 +14,6 @@ try {
 }
 
 let fs = require('fs');
-let acorn_loose = require("acorn/dist/acorn_loose");
 let quiz_data = require('../../quiz_data.json')
 
 describe('Quiz Component', () => {

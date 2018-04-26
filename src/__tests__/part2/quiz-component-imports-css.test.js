@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import { assert } from 'chai';
 
 let fs = require('fs');
-let acorn_loose = require("acorn/dist/acorn_loose");
+let babylon = require("babylon");
 
 describe('Quiz Component', () => {
   it('imports App.css @quiz-component-imports-css', () => {
@@ -16,11 +16,11 @@ describe('Quiz Component', () => {
       assert(false, "The Quiz.js file hasn't been created yet.")
     }
 
-    var ast = acorn_loose.parse_dammit(file, { sourceType: 'module' });
+    let ast = babylon.parse(file, { sourceType: "module", plugins: ["jsx"] })
 
     let css_import_found = false;
 
-    ast['body'].forEach(element => {
+    ast['program']['body'].forEach(element => {
       if (element.type == 'ImportDeclaration') {
         if (element.source.value == './App.css') {
           css_import_found = true

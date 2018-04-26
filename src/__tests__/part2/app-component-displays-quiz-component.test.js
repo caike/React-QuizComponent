@@ -14,7 +14,6 @@ try {
 }
 
 let fs = require('fs');
-let acorn_loose = require("acorn/dist/acorn_loose");
 
 describe('App Component', () => {
   it('renders Quiz component @app-component-displays-quiz-component', () => {

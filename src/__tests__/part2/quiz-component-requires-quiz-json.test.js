@@ -5,9 +5,7 @@ import { shallow } from 'enzyme';
 import { assert } from 'chai';
 
 let fs = require('fs');
-var esprima = require('esprima');
-let acorn = require("acorn");
-let acorn_loose = require("acorn/dist/acorn_loose");
+let babylon = require('babylon')
 
 describe('Quiz Component', () => {
   it('requires quiz_data.json @quiz-component-imports-css', () => {
@@ -18,12 +16,12 @@ describe('Quiz Component', () => {
       assert(false, "The Quiz.js file hasn't been created yet.")
     }
 
-    var ast = acorn_loose.parse_dammit(file, { sourceType: 'module' });
-    assert(ast.body.length != 0, "We can't find any code in the Quiz.js file")
+    let ast = babylon.parse(file, { sourceType: "module", plugins: ["jsx"] })
+    assert(ast.program.body, "We can't find any code in the Quiz.js file")
 
     let quiz_data_loaded_correctly = false;
 
-    ast['body'].forEach(element => {
+    ast['program']['body'].forEach(element => {
       if (element.type == 'VariableDeclaration') {
         if (element.kind == 'let') {
           if (element.declarations[0].id.name == 'quiz_data') {

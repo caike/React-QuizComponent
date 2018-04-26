@@ -14,7 +14,6 @@ try {
 }
 
 let fs = require('fs');
-let acorn_loose = require("acorn/dist/acorn_loose");
 let quiz_data = require('../../quiz_data.json')
 
 describe('Quiz Component', () => {
@@ -31,7 +30,7 @@ describe('Quiz Component', () => {
     if (quiz.find('.QuizQuestion').length > 0) {
       assert(quiz.find('.QuizQuestion').text() == quiz_data.quiz_questions[0].instruction_text, "The div with a class of `QuizQuestion` isn't displaying the correct instruction text.")
     } else {
-      assert(false, "There is not div with a className of QuizQuestion yet.")
+      assert(false, "There is not a div with a className of QuizQuestion yet.")
     }
   })
 })
