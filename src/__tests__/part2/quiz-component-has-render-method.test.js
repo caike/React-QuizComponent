@@ -36,6 +36,8 @@ describe('Quiz Component', () => {
           assert(el.props.children == quiz_data.quiz_questions[0].instruction_text)
         }
       }
+    }  else if (quiz.find('QuizQuestion')) {
+      // this block will run after @quiz-component-displays-quiz-question-component
     } else {
       // this block will run until @quiz-component-has-quiz-question-div
       assert(quiz.containsMatchingElement(<div>Quiz</div>), "The Quiz component isn't rendering a single div with the text `Quiz`")

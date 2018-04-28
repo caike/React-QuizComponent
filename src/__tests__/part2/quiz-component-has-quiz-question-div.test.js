@@ -40,6 +40,8 @@ describe('Quiz Component', () => {
     } else if (quiz.containsMatchingElement(<div>Quiz</div>)) {
       // this block will run until @quiz-component-has-quiz-question-div
       assert(false, "The Quiz component isn't rendering a single div with the class `QuizQuestion`")
+    } else if (quiz.find('QuizQuestion')) {
+      // this block will run after @quiz-component-displays-quiz-question-component
     } else {
       assert(false, "The Quiz component isn't rendering a single div with the class `QuizQuestion`")
     }

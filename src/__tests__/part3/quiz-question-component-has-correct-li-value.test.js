@@ -48,7 +48,11 @@ describe('QuizQuestion Component', () => {
 
     assert(div.querySelector('main') != null, "no main")
     assert(div.querySelectorAll('main section ul li').length != 0, "We can't find an `li` tag inside of the `ul` tag in the QuizQuestion component's JSX.")
-    let li_contents = div.querySelectorAll('main section ul li')[0]
-    assert(li_contents.innerHTML == quiz_data.quiz_questions[0].answer_options[0], "You're not displaying the correct data from the `quiz_question` prop in the QuizQuestion component's JSX.")
+    if (div.querySelectorAll('main section ul li button') != null) {
+      // this runs after @quiz-question-component-displays-quiz-question-button-component
+    } else {
+      let li_contents = div.querySelectorAll('main section ul li')[0]
+      assert(li_contents.innerHTML == quiz_data.quiz_questions[0].answer_options[0], "You're not displaying the correct data from the `quiz_question` prop in the QuizQuestion component's JSX.")
+    }
   })
 })
