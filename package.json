@@ -11,6 +11,20 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "./node_modules/.bin/cross-env react-scripts test --env=jsdom",
+    "test:part2": "./node_modules/.bin/cross-env react-scripts test --env=jsdom --noStackTrace src/__tests__/part2",
+    "test:part3": "./node_modules/.bin/cross-env react-scripts test --env=jsdom --noStackTrace src/__tests__/part3",
+    "test:part4": "./node_modules/.bin/cross-env react-scripts test --env=jsdom --noStackTrace src/__tests__/part4",
+    "test:part5": "./node_modules/.bin/cross-env react-scripts test --env=jsdom --noStackTrace src/__tests__/part5",
+    "test:part6": "./node_modules/.bin/cross-env react-scripts test --env=jsdom --noStackTrace src/__tests__/part6",
+    "test:part7": "./node_modules/.bin/cross-env react-scripts test --env=jsdom --noStackTrace src/__tests__/part7",
+    "test:part8": "./node_modules/.bin/cross-env react-scripts test --env=jsdom --noStackTrace src/__tests__/part8",
+    "tutor-test:part2": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --json --noStackTrace src/__tests__/part2",
+    "tutor-test:part3": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --json --noStackTrace src/__tests__/part3",
+    "tutor-test:part4": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --json --noStackTrace src/__tests__/part4",
+    "tutor-test:part5": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --json --noStackTrace src/__tests__/part5",
+    "tutor-test:part6": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --json --noStackTrace src/__tests__/part6",
+    "tutor-test:part7": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --json --noStackTrace src/__tests__/part7",
+    "tutor-test:part8": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --json --noStackTrace src/__tests__/part8",
     "tutor-test": "./node_modules/.bin/cross-env CI=true react-scripts test --env=jsdom --json --noStackTrace",
     "eject": "react-scripts eject"
   },
@@ -40,6 +54,7 @@
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "esprima": "4.0.0",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "16.3.1",
+    "sinon": "5.0.1"
   }
 }
