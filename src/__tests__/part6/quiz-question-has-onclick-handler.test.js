@@ -19,7 +19,7 @@ let quiz_data = require('../../quiz_data.json')
 let babylon = require('babylon')
 
 describe('QuizQuestion Component', () => {
-  it('has a method named `handleClick` and a renders a QuizQuestionButton component with a `clickHandler` prop @quiz-question-has-click-handler', () => {
+  it('has a method named `handleClick` and a renders a QuizQuestionButton component with a `clickHandler` prop @quiz-question-has-onclick-handler', () => {
     assert(quizQuestionComponentExists, "The QuizQuestion component hasn't been created yet.")
 
     let quizQuestion;

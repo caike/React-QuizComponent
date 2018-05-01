@@ -36,26 +36,4 @@ describe('QuizQuestionButton Component', () => {
     assert(component_class_import_found, "You're not importing the Component class")
   });
 
-  it('imports App.css @quiz-question-button-component-imports-react', () => {
-    let file;
-    try {
-      file = fs.readFileSync(__dirname + '/../../QuizQuestionButton.js').toString();
-    } catch (e) {
-      assert(false, "The QuizQuestionButton.js file hasn't been created yet.")
-    }
-
-    let ast = babylon.parse(file, { sourceType: "module", plugins: ["jsx"] })
-
-    let css_import_found = false;
-
-    ast['program']['body'].forEach(element => {
-      if (element.type == 'ImportDeclaration') {
-        if (element.source.value == './App.css') {
-          css_import_found = true
-        }
-      }
-    })
-    assert(css_import_found, "You're not importing the App.css file.")
-  });
-
 })
