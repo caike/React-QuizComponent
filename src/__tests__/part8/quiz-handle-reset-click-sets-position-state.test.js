@@ -33,7 +33,12 @@ describe('Quiz Component', () => {
     quiz.setState({ quiz_position: 3 })
 
     assert(quiz.state().quiz_position == 3, "The Quiz component's state does not have a key named `quiz_position` with the correct value - are you sure you're still setting the component's state to `quiz_data`?")
-    quiz.instance().handleResetClick()
+
+    try {
+      quiz.instance().handleResetClick()
+    } catch (e) {
+      assert(false, "There's not a method named `handleResetClick()` in the Quiz class.")
+    }
 
     assert(quiz.state().quiz_position == 1, "The Quiz component state's `quiz_position` value is not being reset to 1 when the `handleResetClick()` method is called.")
   })

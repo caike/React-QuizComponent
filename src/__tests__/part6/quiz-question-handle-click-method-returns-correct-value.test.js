@@ -79,9 +79,8 @@ describe('QuizQuestion Component', () => {
     assert(spy2.called == false, "It doesn't appear that the conditional logic checking if the `buttonText` is equal to `this.props.quiz_question.answer` in the QuizQuestion's `handleClick` method.")
     try {
       quizQuestion.instance().handleClick('5')
-      assert(spy2.called == true, "`this.props.clickHandler()` is not being called when the `buttonText` is equal to `this.props.quiz_question.answer` in QuizQuestion's `handleClick` method.")
     } catch (e) {
-      
     }
+    assert(spy2.called == true, "`this.props.clickHandler()` is not being called when the `buttonText` is equal to `this.props.quiz_question.answer` in QuizQuestion's `handleClick` method.")
   })
 })

@@ -47,9 +47,9 @@ describe('QuizQuestion Component', () => {
       button_text: '5'
     }
     if (quizQuestion.find('QuizQuestionButton').length == 1) {
-      assert(JSON.stringify(quizQuestion.find('QuizQuestionButton').props()) == JSON.stringify(expectedProps), "You're not passing the correct prop values to QuizQuestionButton")
+      assert(JSON.stringify(quizQuestion.find('QuizQuestionButton').props()) == JSON.stringify(expectedProps), "You're not passing the correct prop values to QuizQuestionButton.")
     } else {
-      // this will run after @quiz-question-component-maps-multiple-button-components
+      assert(false, "We don't see the QuizQuestionButton element in the QuizQuestion component's JSX.")
     }
 
   })

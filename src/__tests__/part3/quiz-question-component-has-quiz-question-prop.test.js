@@ -38,7 +38,7 @@ describe('Quiz Component', () => {
     }
 
     assert(quiz.find('QuizQuestion').length == 1, "We couldn't find the QuizQuestion component being loaded by the Quiz component")
-    assert(quiz.find('QuizQuestion').props().quiz_question != null, "prop doesn't exist")
-    assert(quiz.find('QuizQuestion').props().quiz_question == quiz_data.quiz_questions[0], "prop doesn't have the correct value")
+    assert(quiz.find('QuizQuestion').props().quiz_question != null, "The QuizQuestion component exists, but there's no prop named `quiz_question`.")
+    assert(quiz.find('QuizQuestion').props().quiz_question == quiz_data.quiz_questions[0], "The QuizQuestion component has a prop named `quiz_question`, but it doesn't contain the correct value.")
   })
 })
