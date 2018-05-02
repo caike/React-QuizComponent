@@ -36,6 +36,8 @@ describe('QuizQuestion Component', () => {
       incorrectAnswer: false
     }
 
+    assert(quizQuestion.state() != null, "The QuizQuestion component isn't starting with the correct default state declared in the constructor function.")
+
     assert(quizQuestion.state().incorrectAnswer != null && quizQuestion.state().incorrectAnswer == false, "The QuizQuestion component's state should start out with a key of `incorrectAnswer` set to `false`.")
 
     quizQuestion.setState({ incorrectAnswer: true })
